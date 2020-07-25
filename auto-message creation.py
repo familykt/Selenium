@@ -40,12 +40,6 @@ driver.get(url)
 driver.maximize_window()
 
 
-# In[ ]:
-
-
-
-
-
 # In[49]:
 
 
@@ -119,16 +113,4 @@ except:
 
 finally:
     driver.quit()
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
