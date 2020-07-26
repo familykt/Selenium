@@ -38,6 +38,7 @@ wait = WebDriverWait(driver, 10)
 url = "https://cm.staging.tripla.ai/"
 driver.get(url)
 driver.maximize_window()
+driver.implicitly_wait(10)
 
 
 # In[49]:
@@ -45,13 +46,13 @@ driver.maximize_window()
 
 # log in
 try:
-    driver.find_element_by_id('__BVID__36').send_keys(json_data['id'])
-    driver.find_element_by_id('__BVID__38').send_keys(json_data['password'])
+    driver.find_element_by_id('__BVID__36').send_keys(json_data['Account'][0]['id'])
+    driver.find_element_by_id('__BVID__38').send_keys(json_data['Account'][0]['password'])
     driver.find_element_by_css_selector('.btn').click()
     print("successfully logged in")
 except:
     print("login failed")
-time.sleep(2)
+time.sleep(10)
 
 
 # In[50]:

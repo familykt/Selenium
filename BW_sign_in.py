@@ -93,7 +93,9 @@ try:
     driver.find_element_by_id("email").send_keys(json_data['Account'][1]['id'])
     driver.find_element_by_id("pass").send_keys(json_data['Account'][1]['password'])
     driver.find_element_by_id("u_0_0").click()
+    time.sleep(5)
     print("successfully logged in")
+
 except:
     print("login failed")
 finally:
