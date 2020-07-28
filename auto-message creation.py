@@ -52,7 +52,7 @@ try:
     print("successfully logged in")
 except:
     print("login failed")
-time.sleep(10)
+driver.implicitly_wait(10)
 
 
 # In[50]:
