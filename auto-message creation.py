@@ -52,13 +52,14 @@ try:
     print("successfully logged in")
 except:
     print("login failed")
-driver.implicitly_wait(10)
+
 
 
 # In[50]:
 
 
 # move to auto-message page
+time.sleep(5)
 hotel_url = "https://cm.staging.tripla.ai/hotels/4/auto-messages/"
 driver.get(hotel_url)
 
@@ -96,6 +97,7 @@ button_2 = wait.until(EC.presence_of_element_located((By.XPATH,"//td[contains(te
 try:
     button_2.click()
     print("successfully moved to created auto-message")
+    time.sleep(5)
 except:
     print("failed to move to created auto-message")
 
@@ -109,6 +111,7 @@ try:
     button_3.click()
     driver.find_element_by_css_selector('.btn.btn-info').click()
     print("successfully deleted")
+    time.sleep(5)
 except:
     print("failed to deleted")
 
