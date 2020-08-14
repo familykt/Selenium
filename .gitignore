@@ -1,1 +1,3 @@
 account.json
+__pycache__/
+*.ipynb
