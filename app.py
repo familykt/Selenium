@@ -13,7 +13,7 @@ driver = webdriver.Chrome()
 
 search_page = SearchPage(driver)
 search_page.open()
-search_page.search('Automation tool')
+search_page.search_box.search('Automation tool')
 
 result_page = ResultPage(search_page.driver)
 print(result_page.get_result_stats())

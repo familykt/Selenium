@@ -4,6 +4,7 @@ from selenium.webdriver.common.keys import Keys
 
 from Locators import SearchPageLocater
 from Locators import ResultPageLocator
+from elements import InputElement
 
 class BasePage:
 
@@ -21,11 +22,14 @@ class SearchPage(BasePage):
     def __init__(self,driver):
         url = 'http://www.google.com/'
         super().__init__(driver=driver,url=url)
-
-    def search(self, keyword):
+    
+    @property
+    def search_box(self):
         locator = SearchPageLocater.search_box
-        search_box = self.driver.find_element(*locator)
-        search_box.send_keys(keyword + Keys.ENTER)
+        return InputElement(
+            driver = self.driver,
+            locator= locator
+        )
 
 class ResultPage(BasePage):
     def __init__(self,driver):
